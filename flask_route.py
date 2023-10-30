@@ -23,6 +23,17 @@ os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 def index():
     return render_template('page.html')
 
+@app.route('/about')
+def about():
+    return render_template('About.html')
+
+@app.route('/FirstReport')
+def FirstReport():
+    return render_template('FirstReport.html')
+
+@app.route('/SecondReport')
+def SecondReport():
+    return render_template('SecondReport.html')
 
 # Image download management
 @app.route('/uploads', methods=['POST'])
@@ -40,10 +51,15 @@ def upload():
                     filename = os.path.join(app.config['UPLOAD_FOLDER'], filename)
                     uploaded_image.save(filename)
 
+                    # Affichez l'image téléchargée
+                    # Construisez le chemin de l'image téléchargée
+                    image_path = url_for('static', filename='uploads/' + uploaded_image.filename)
+                    print(image_path)
+
                     # Calling up the image processing function
                     resultat_treatment=traiter_image(filename)
 
-                    return render_template('Resultats.html', uploaded_image=uploaded_image.filename, resultat_treatment=resultat_treatment)
+                    return render_template('Resultats.html', uploaded_image=uploaded_image.filename,   resultat_treatment=resultat_treatment)
                     
                 except Exception as e:
                     return f'Erreur lors de l\'enregistrement de l\'image : {str(e)}'

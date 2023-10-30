@@ -1,4 +1,5 @@
 absl-py==2.0.0
+altair @ file:///home/conda/feedstock_root/build_artifacts/altair_1693422388579/work
 anyio==4.0.0
 argon2-cffi==23.1.0
 argon2-cffi-bindings==21.2.0
@@ -13,16 +14,13 @@ beautifulsoup4==4.12.2
 bleach==6.0.0
 blinker==1.6.3
 bokeh==3.2.2
-boltons @ file:///home/conda/feedstock_root/build_artifacts/boltons_1677499911949/work
-brotlipy @ file:///home/conda/feedstock_root/build_artifacts/brotlipy_1666764672617/work
 cachetools==5.3.1
 certifi==2023.7.22
-cffi @ file:///home/conda/feedstock_root/build_artifacts/cffi_1671179360775/work
-charset-normalizer @ file:///home/conda/feedstock_root/build_artifacts/charset-normalizer_1678108872112/work
+charset-normalizer==3.1.0
 click==8.1.7
-colorama @ file:///home/conda/feedstock_root/build_artifacts/colorama_1666700638685/work
+colorama==0.4.6
 comm==0.1.4
-conda @ file:///home/conda/feedstock_root/build_artifacts/conda_1694556017961/work
+conda==23.7.4
 conda-package-handling @ file:///home/conda/feedstock_root/build_artifacts/conda-package-handling_1669907009957/work
 conda_package_streaming @ file:///home/conda/feedstock_root/build_artifacts/conda-package-streaming_1669733752472/work
 contourpy==1.1.0
@@ -97,7 +95,7 @@ opencv-python==4.8.1.78
 opt-einsum==3.3.0
 overrides==7.4.0
 packaging @ file:///home/conda/feedstock_root/build_artifacts/packaging_1681337016113/work
-pandas @ file:///home/conda/feedstock_root/build_artifacts/pandas_1693415141133/work
+pandas==2.1.0
 pandocfilters==1.5.0
 parso==0.8.3
 pexpect==4.8.0
@@ -168,7 +166,7 @@ tzdata @ file:///home/conda/feedstock_root/build_artifacts/python-tzdata_1680081
 uri-template==1.3.0
 urllib3 @ file:///home/conda/feedstock_root/build_artifacts/urllib3_1678635778344/work
 vega-datasets==0.9.0
-vegafusion @ file:///home/conda/feedstock_root/build_artifacts/vegafusion_1692646901766/work
+vegafusion==1.4.0
 vegafusion-python-embed @ file:///home/conda/feedstock_root/build_artifacts/vegafusion-python-embed_1692645369915/work
 wcwidth==0.2.6
 webcolors==1.13
