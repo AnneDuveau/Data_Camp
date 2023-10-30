@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Page de Data Camp</title>
     <link rel="icon" href="static/images/Iris_logo.png" type="image/png">
     <link rel="stylesheet" href="static/css/page.css"> 
+    
+    
 </head>
 <body>
     <header>
@@ -18,38 +20,100 @@
     
     <!-- Barre de navigation en haut -->
     <div class="navbar">
-        <a href="APropos.html">About</a>
-        <a href="page2.html">Page 2</a>
-        <a href="page3.html">Page 3</a>
+        <a href="{{ url_for('about') }}">About</a>
+        <a href="{{ url_for('FirstReport') }}">First Report</a>
+        <a href="{{ url_for('SecondReport') }}">Second Report</a>
     </div>
-    <div class="presentation">
-        <p>Cancer is a formidable disease that can affect any part of the body, including the eyes.
-            While eye cancer is less common than other types of cancer, it can have serious consequences if not detected at an early stage. 
-            That's why screening for eye cancer is of paramount importance. Understanding this disease, its symptoms, and the best screening methods is essential for preserving our vision and ocular health.
-            <br><br>Why is early screening essential?
-            <br>Early Detection: Eye cancer, like all cancers, is easier to treat when detected at an early stage. Early diagnosis can help save the patient's vision and life.
-            <br>Prevention of Vision Loss: The symptoms of eye cancer can be subtle, making early detection even more crucial to prevent vision loss. Ignoring the symptoms can lead to severe impairment of vision.
-            <br>Appropriate Treatment: Early diagnosis allows for the prompt initiation of suitable treatment, whether it's surgery, radiotherapy, chemotherapy, or other targeted therapies, depending on the type and stage of cancer.
-        </p>
-    </div>
-    <div id="image-upload">
-        <h2>Analyseur d'imagerie médicale de l'oeil (.png uniquement)</h2>
-        <form action="/uploads" method="POST" enctype="multipart/form-data">
-            <input type="file" name="image" accept=".png" required>
-            <input type="submit" value="Téléverser">
-        </form>
 
-        <form action="/traiter_image" method="POST" enctype="multipart/form-data">
-            <input type="submit" value="Traiter l'image">
-        </form>
+    <div class="main-content">
+        <div class="presentation">
+            <p>Cancer is a formidable disease that can affect any part of the body, including the eyes.
+
+                While eye cancer is less common than other types of cancer, it can have serious consequences if not detected at an early stage. 
+                
+                That's why screening for eye cancer is of paramount importance. Understanding this disease, its symptoms, and the best screening methods is essential for preserving our vision and ocular health.
+                <br><br>Why is early screening essential?
+                
+                <br>Early Detection: Eye cancer, like all cancers, is easier to treat when detected at an early stage. Early diagnosis can help save the patient's vision and life.
+                
+                <br>Prevention of Vision Loss: The symptoms of eye cancer can be subtle, making early detection even more crucial to prevent vision loss. Ignoring the symptoms can lead to severe impairment of vision.
+                
+                <br>Appropriate Treatment: Early diagnosis allows for the prompt initiation of suitable treatment, whether it's surgery, radiotherapy, chemotherapy, or other targeted therapies, depending on the type and stage of cancer.
+            </p>
+        </div>
     
 
-        {% if uploaded_image %}
-        <h2>Downloaded image :</h2>
-        <img src="{{ url_for('static', filename='uploads/' + uploaded_image) }}" alt="Image">
-        {% endif %}
+        <!--ANCIENNE VERSION -->
+    <!--    <div id="image-upload">
+            <h2>Analyseur d'imagerie médicale de l'oeil (.png uniquement)</h2>
+            <form action="/uploads" method="POST" enctype="multipart/form-data">
+                <input type="file" name="image" accept=".png" required>
+                <input type="submit" value="Téléverser">
+            </form>
 
+            {% if uploaded_image %}
+            <h2>Downloaded image :</h2>
+            <img src="{{ url_for('static', filename='uploads/' + uploaded_image) }}" alt="Image">
+            {% endif %}
+        </div>
+    -->
 
+        <!--Version de Clarisse-->
+        <div id="image-upload">
+            <h2>Analyseur d'imagerie médicale de l'oeil (.png uniquement)</h2>
+            <form action="/uploads" method="POST" enctype="multipart/form-data">
+                <input type="file" name="image" accept=".png" required>
+                <input type="submit" value="Téléverser">
+            </form>
+    
+            {% if uploaded_image %}
+            <h2>Downloaded image :</h2>
+            <!-- img src="{{ url_for('static', filename='uploads/' + uploaded_image) }}" alt="Image"-->
+            <img src="/uploads/Ananas.png" alt="image yeux">
+            {% endif %}
+        </div>
     </div>
+    
+    <!--FOOTER-->
+    <footer class="footer-banner">
+        <div class="footer-column">
+            <h4>Contactez-nous :</h4>
+            <ul>
+                <li><a href="mailto:camille.benezech@efrei.net">Camille Benezech</a></li>
+                <li><a href="mailto:clarisse.boche@efrei.net">Clarisse Boche</a></li>
+                <li><a href="mailto:anne.diveau@efrei.net">Anne Duveau</a></li>
+            </ul>
+        </div>
+    
+        <div class="footer-column">
+            <div class="footer-navigation">
+                <h4>Navigation :</h4>
+                <ul>
+                    <li><a href="{{ url_for('about') }}">About</a></li>
+                    <li><a href="{{ url_for('FirstReport') }}">First Report</a></li>
+                    <li><a href="{{ url_for('SecondReport') }}">Second Report</a></li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="footer-column">
+            <h4>Réseaux Sociaux :</h4>
+            <a href="https://www.instagram.com/Efrei_Paris" target="_blank">
+                <img src="static/images/instagram.png" alt="Instagram" class="social-icon">
+            </a>
+            
+            <a href="https://www.efrei.fr" target="_blank">
+                <img src="static/images/envoyer.png" alt="EFREI Paris" class="social-icon">
+            </a>
+        </div>
+    
+        <div class="footer-column">
+            <h4>Adresse :</h4>
+            <p>31 avenue de la République, Villejuif</p>
+            <h4>Droits d'auteur :</h4>
+            <p>© 2023 - CCA.DataCamp</p>
+        </div>
+    </footer>
+    
 </body>
 </html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Page de Data Camp</title>
+    <link rel="icon" href="static/images/Iris_logo.png" type="image/png">
+    <link rel="stylesheet" href="static/css/page.css"> 
+  
+</head>
+<body>
+    <header>
+        <div class="banner">
+            <img src="static/images/yeuxbaniere2.jpg" alt="Bannière avec des yeux">
+        </div>
+    </header>
+
+    <div class="title">
+        <h1>Eye Cancer image classifier</h1>
+    </div>
+    
+    <!-- Barre de navigation en haut -->
+    <div class="navbar">
+        <a href="{{ url_for('index') }}">Welcome</a>
+        <a href="{{ url_for('FirstReport') }}">First Report</a>
+        <a href="{{ url_for('about') }}">About</a>
+    </div>
+
+    <div class="main-content">
+        <!--Debut du blabla-->
+        <h1>Second report</h1>
+
+        <h2>Cloud deployment platform:</h2>
+        <p>
+            <br>In our research, we identified several Cloud deployment platforms that would best meet our needs.
+            <br>We decided to choose a service in one of these two platforms: AWS and Azure as they are the world’s most used Cloud deployment platforms and as they were both recommended to us. So we came across the following services for each of these platforms:
+            <br>For AWS, we have 2 types of deployment methods: using a virtual machine (EC2) and direct management by the platform (AWS Amplify and AWS App Runner).
+            <br>Similarly, for Azure, we considered several options, including Azure Virtual Machine and Azure App Service.
+        </p>
+        
+        <br><br>
+        <h2>Azure:</h2>
+        <p>In the last assignment, we discussed the various platforms available for the cloud deployment phase. We ultimately chose Microsoft Azure for several reasons. Its user-friendly interface and ease of use were key factors in our choice. In addition, Azure provides support for a variety of programming languages, including Python, the language we've opted to use. Azure offers automated deployment services, which simplifies the process. Azure provides robust technical support like detailed documentation, code examples  and tutorials to help beginners get started. 
+        </p>
+
+        <br><br>
+        <h2>The choice of our Cloud service:</h2>
+        <p>Among the services provided by Azure (Azure Virtual Machine and Azure App Service), which we mentioned earlier, we chose to use the Azure app service, an automated approach. Azure App Service is a great choice for our project because it can handle large amounts of data, including images.
+            <br>As we are not familiar with the use of Cloud deployment platforms, we decided to go on with the easiest deployment platform, and Azure app service  is one of them because it is a fully managed cloud service and it has an intuitive user interface.
+        </p>
+
+        <br><br>
+        <h2>Machine Learning Model:</h2>
+        <p>By the first mission, we had already created a machine learning model with CNN. Subsequently, our aim was to optimize the model to ensure maximum performance in our data science project. We evaluated our model on one key parameter: accuracy. But, we realized from our supervisor that accuracy alone was not enough to assess the quality of our model. So, we will explore an additional set of parameters like the Area under the ROC curve (AUC), recall, overall performance and carbon footprint. These metrics enabled us to assess the quality, accuracy and efficiency of our model.
+            <br>For the next steps, we plan to make adjustments to the hyperparameters of our model, such as the learning rate, the batch size, the number of layers and the number of neurons. We also intend to explore a new deep learning library, PyTorch. This transition may be able to give us something. Finally, we would like to test another deep learning model, DenseNet, which is correctly used for medical image classification. 
+            <br>Today, we realized that our CNN model, despite its good precision, tends to systematically predict the "cancer" class without taking into account the actual characteristics of the images.
+            <!--METTRE LA TABLE DE CONFUSION-->
+            <div class="img_conf">
+                <img src="static/images/MatriceConfusion.png" alt="matrice de confusion">
+            </div>
+            <br>We believe that the observation can be explained by the imbalance between the two classes, with the "cancer" class being strongly over-represented. In the confusion matrix, it is evident that there are no true positives, but we have 506 true negatives and 134 false positives. We are going to try to resolve the problem as quickly as possible by exploring techniques for managing class imbalance like method data level (transform data)
+        </p>
+
+        <br><br>
+        <h2>Website implementation:</h2>
+        <p>As we planned and mentioned in the first assignment, we used flask to create the user interface of our application.
+            <br>Our objective was to enable users to perform medical analysis on our Website. To achieve this, we have created a repository where users can upload an image directly from their desktops. When the user enters the website, he has to click on the “import an image” button which then facilitates the uploading of the image to a designated folder we named “uploads”.
+            <br>To implement the user interface, we used 3 programming languages: Python, CSS, and html. We have dealt with some difficulties to properly display the image that has been uploaded on the website. Ultimately, we identified that the issue was related to an incorrect file path. Our folder “uploads” was not in the appropriate location. 
+        </p>
+    </div>    
+    
+    <!--Footer-->
+    <footer class="footer-banner">
+        <div class="footer-column">
+            <h4>Contactez-nous :</h4>
+            <ul>
+                <li><a href="mailto:camille.benezech@efrei.net">Camille Benezech</a></li>
+                <li><a href="mailto:clarisse.boche@efrei.net">Clarisse Boche</a></li>
+                <li><a href="mailto:anne.diveau@efrei.net">Anne Duveau</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <div class="footer-navigation">
+                <h4>Navigation :</h4>
+                <ul>
+                    <li><a href="{{ url_for('about') }}">About</a></li>
+                    <li><a href="{{ url_for('FirstReport') }}">First Report</a></li>
+                    <li><a href="{{ url_for('SecondReport') }}">Second Report</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-column">
+            <h4>Réseaux Sociaux :</h4>
+            <a href="https://www.instagram.com/Efrei_Paris" target="_blank">
+                <img src="static/images/instagram.png" alt="Instagram" class="social-icon">
+            </a>
+            
+            <a href="https://www.efrei.fr" target="_blank">
+                <img src="static/images/envoyer.png" alt="EFREI Paris" class="social-icon">
+            </a>
+        </div>
+
+        <div class="footer-column">
+            <h4>Adresse :</h4>
+            <p>31 avenue de la République, Villejuif (94800)</p>
+            <h4>Droits d'auteur :</h4>
+            <p>© 2023 - CCA.DataCamp</p>
+        </div>
+    </footer>
+
+</body>
+</html>

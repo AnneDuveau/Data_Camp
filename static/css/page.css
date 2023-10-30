@@ -1,5 +1,10 @@
 body {
   background-color: beige;
+
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Cela garantit que le corps de la page occupe au moins la hauteur de l'écran. */
+  position: relative;
  
 }
 .banner img {
@@ -43,4 +48,77 @@ h1 {
 /* Espacement entre les liens (facultatif) */
 .navbar a + a {
   margin-left: 10px; /* Ajustez cet espacement selon vos préférences */
+}
+
+.img_conf {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh; /* Ajustez la hauteur en fonction de vos besoins */
+  padding-top: 8%;
+  padding-bottom: 8%; 
+}
+
+
+/*FOOTER*/
+/* Styles pour le pied de page */
+.footer-banner {
+  background-color: #60aad4; /* Couleur de fond du pied de page */
+  color: white; /* Couleur du texte */
+  padding-top: 20px; /* Espace interne pour le contenu du pied de page */
+  display: flex;
+  flex-wrap: wrap; /* Permet aux colonnes de passer à la ligne si nécessaire */
+  justify-content: space-between; /* Espacez les colonnes horizontalement */
+  align-items: flex-start; /* Alignez les éléments en haut de chaque colonne */
+
+  position: absolute  ; /*essayer fixed apres*/
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+.main-content {
+  min-height: 100vh; /* 100% de la hauteur de la vue */
+  padding-bottom: 20%; 
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+
+/* Styles pour chaque colonne */
+.footer-column {
+  flex: 1; /* Chaque colonne prend une part égale de l'espace disponible */
+  margin-right: 20px; /* Espacement entre les colonnes */
+}
+
+.footer-column:last-child {
+  margin-right: 0; /* Supprime l'espacement à droite de la dernière colonne */
+}
+
+.footer-column h4 {
+  font-size: 1.2rem; /* Taille de la police pour les titres de colonnes */
+  margin-bottom: 10px; /* Espacement entre le titre et le contenu */
+}
+
+.footer-column ul {
+  list-style-type: none; /* Supprime les puces de la liste */
+  padding: 0; /* Supprime le décalage par défaut de la liste */
+}
+
+.footer-column li {
+  margin: 5px 0; /* Espacement entre les éléments de liste */
+}
+
+/* Styles pour les icônes de réseaux sociaux */
+.footer-column a {
+  display: inline-block; /* Pour que les icônes de réseaux sociaux soient sur la même ligne */
+  margin-right: 10px; /* Espacement entre les icônes */
+}
+
+/* Autres styles personnalisés pour le pied de page */
+/* Styles pour les icônes de réseaux sociaux */
+.social-icon {
+  width: 30px; /* Largeur souhaitée */
+  height: 30px; /* Hauteur souhaitée */
 }

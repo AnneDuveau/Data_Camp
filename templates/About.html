@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Page de Data Camp</title>
+        <link rel="icon" href="static/images/Iris_logo.png" type="image/png">
+
+
+        <link rel="stylesheet" href="static/css/page.css"> 
+        
+        
+    </head>
+    <body>
+        <header>
+            <div class="banner">
+                <img src="static/images/yeuxbaniere2.jpg" alt="Bannière avec des yeux">
+            </div>
+        </header>
+
+        <div class="title">
+            <h1>Eye Cancer image classifier</h1>
+        </div>
+        
+        <!-- Barre de navigation en haut -->
+        <div class="navbar">
+            <a href="{{ url_for('index') }}">Welcome</a>
+            <a href="{{ url_for('FirstReport') }}"> First Report</a>
+            <a href="{{ url_for('SecondReport') }}">Second Report</a>
+        </div>
+
+        <div class="main-content">
+            <h1>Who are we</h1>
+            <p>
+                <br>Camille, with a year of medical school under her belt, brought an essential medical perspective to our team. His extensive knowledge has paved the way for revolutionary advances in the approach to this field.
+                <br><br>Clarisse, a true programming virtuoso, has developed sophisticated computer tools in machine learning for the most optimal results. His technical skills are at the heart of our bioinformatics projects.
+                <br><br>Anne, this pineapple fan, used her solid foundation in programming to lead our modeling projects of this ecosystem, shedding new light on the different techniques to use.
+                <br><br>We are passionate about the use of digital technology to advance biology, and our website reflects this commitment.
+            </p>
+
+            <br><br>
+            <h1>The impact of EFREI </h1>
+            <p>Efrei Paris School, known for its commitment to innovation and academic excellence, has played a crucial role in our journey. She continues to cultivate innovation by educating a new generation of researchers and leaders ready to push the boundaries of science.
+            </p>
+
+            <br><br>
+            <h3>Explore our website to learn more about our work and discover how the convergence of biology and digital technology is redefining scientific research.</h3>
+        </div>
+
+        <!--Footer-->
+        <footer class="footer-banner">
+            <div class="footer-column">
+                <h4>Contactez-nous :</h4>
+                <ul>
+                    <li><a href="mailto:camille.benezech@efrei.net">Camille Benezech</a></li>
+                    <li><a href="mailto:clarisse.boche@efrei.net">Clarisse Boche</a></li>
+                    <li><a href="mailto:anne.diveau@efrei.net">Anne Duveau</a></li>
+                </ul>
+            </div>
+        
+            <div class="footer-column">
+                <div class="footer-navigation">
+                    <h4>Navigation :</h4>
+                    <ul>
+                        <li><a href="{{ url_for('about') }}">About</a></li>
+                        <li><a href="{{ url_for('FirstReport') }}">First Report</a></li>
+                        <li><a href="{{ url_for('SecondReport') }}">Second Report</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        
+            <div class="footer-column">
+                <h4>Réseaux Sociaux :</h4>
+                <a href="https://www.instagram.com/Efrei_Paris" target="_blank">
+                    <img src="static/images/instagram.png" alt="Instagram" class="social-icon">
+                </a>
+                
+                <a href="https://www.efrei.fr" target="_blank">
+                    <img src="static/images/envoyer.png" alt="EFREI Paris" class="social-icon">
+                </a>
+            </div>
+        
+            <div class="footer-column">
+                <h4>Adresse :</h4>
+                <p>31 avenue de la République, Villejuif (94800)</p>
+                <h4>Droits d'auteur :</h4>
+                <p>© 2023 - CCA.DataCamp</p>
+            </div>
+        </footer>
+    </body>
+</html>

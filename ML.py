@@ -62,6 +62,8 @@ def entrainement_modele(chemin_train_excel, chemin_eval_excel, chemin_test_excel
         MaxPooling2D((2, 2)),
         Conv2D(256, (3, 3), activation='relu'),  # Ajout d'une autre couche Conv2D
         MaxPooling2D((2, 2)),
+        Conv2D(128, (3, 3), activation='relu'),
+        MaxPooling2D((2, 2)),
         Flatten(),
         Dense(128, activation='relu'),
         Dense(1, activation='sigmoid')

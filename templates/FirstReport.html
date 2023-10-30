@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Page de Data Camp</title>
+        <link rel="icon" href="static/images/Iris_logo.png" type="image/png">
+        <link rel="stylesheet" href="static/css/page.css"> 
+        
+    </head>
+    <body>
+        <header>
+            <div class="banner">
+                <img src="static/images/yeuxbaniere2.jpg" alt="Bannière avec des yeux">
+            </div>
+        </header>
+        
+        <div class="title">
+            <h1>Eye Cancer image classifier</h1>
+        </div>
+        
+        <!-- Barre de navigation en haut -->
+        <div class="navbar">
+            <a href="{{ url_for('index') }}">Welcome</a>
+            <a href="{{ url_for('SecondReport') }}">Second Report</a>
+            <a href="{{ url_for('about') }}">About</a>
+        </div>
+
+        <div class="main-content">
+            <!--Debut du blabla-->
+            <h1>First report</h1>
+
+            <h2>Choice of the subject : </h2>
+            <p>
+                <br>We are three students in the M1 Biology program
+                <br><br>We choose this subject among others because it aligns with our academic background, preparing us for upcoming internships where we’ll be tasked with the same topics. Being very drawn to the world of digital technology in the service of biology, it was quite natural that our choice turned to the field of eye cancer detection
+                
+                <br><br>Cancer is one of the leading causes of death worldwide, and early detection is crucial to improve patients’ chances of survival. Among various types of cancer, eye cancer, although less common than some others, can have a profound impact on individuals' lives. 
+                That's why we chose to focus on eye cancer recognition for our Data Camp project. 
+                During this exciting learning experience, we will explore image processing techniques, machine learning, and data analysis to develop innovative methods for early detection of eye cancer. 
+                
+                <br><br>We will implement data, build models and collaborate to contribute to the fight against this disease. This Data Camp represents a real opportunity for us, an exciting and collaborative learning experience on a subject that is not only fascinating but also enriching.
+            </p>
+            
+            <br><br>
+            <h2>Objectives:</h2>
+            <p>Our Data camp project will focus on applying our data analysis and machine learning skills to a real world problem: cancer detection.
+                <br><br>The primary objective of our project was to develop a machine learning model that could analyze image data to assist in the early detection of cancer. 
+                <br>Then we will work on integrating it into a web interface that will enable an average user to upload a medical image of an eye, and for the software to predict the likelihood of the presence or absence of eye cancer. 
+                <br><br>To achieve this, we are given multiple datasets of eye images that we will process first and then use it to train the model,  in order to obtain the most reliable algorithm possible.
+            </p>
+
+            <br><br>
+            <h2>Technical choices:</h2>
+            <p>For this project, we decided to use the Python language and we created a collaborative github repository to collaborate and track our project’s progress
+                <br><br>For the selection of the machine learning model, we will try different deep learning models for image analysis. For the cloud deployment part, we have identified AWS, Azure and Digital Ocean as potential platforms because they permit the execution of the Python language. However, we haven’t finalized our choice yet, we would like to evaluate each of them to determine which one is the best in terms of functionality and ease of use. 
+                <br><br>To achieve this, we are given multiple datasets of eye images that we will process first and then use it to train the model,  in order to obtain the most reliable algorithm possible.
+            </p>
+
+            <br><br>
+            <h2>Presentation of our dataset:</h2>
+            <p>Our dataset is composed of 3 CSV files for the 3 steps of developing an eye cancer image classifier: “training”, “evaluation” and “test”.
+                <br>The training refers to the training part, where the model is trained on a small sample of data
+                <br>The evaluation phase corresponds to an intermediate step in machine learning where the model’s performance is assessed on a separate dataset that it hasn’t seen during the training step
+                <br>And the Test phase is the final step where the model’s generalization performance is assessed on a completely unseen dataset.
+                <br>Before beginning the project, we have conducted extensive research and groundwork before concrete actions.
+            </p>
+
+            <br><br>
+            <h2>Observations:</h2>
+            <p>In our datasets, we have multiple columns:  the first column represents the unique ID of each eye-medical image described in a given row. The second column is labeled “Disease Risk” with a value of 1 if there is a risk of having eye cancer and 0 if not. We also have other columns that describe multiple symptoms that can be observed in a medical image of an eye. 
+                <br><br>When we analyzed the dataset we discovered that if an eye has any one of the symptoms listed in the dataset, the “disease_risk” column is annotated with 1.
+                <br>This suggests that the presence of any of these symptoms is associated with an increased risk of having eye cancer. 
+                <br>So in order to develop our model, we only need the column named “Disease_Risk” and the medical images. Our model will learn by comparing the images and the prediction provided by the “Disease_Risk” column.
+            </p>
+        </div>
+
+
+        <!--Footer-->
+        <footer class="footer-banner">
+            <div class="footer-column">
+                <h4>Contactez-nous :</h4>
+                <ul>
+                    <li><a href="mailto:camille.benezech@efrei.net">Camille Benezech</a></li>
+                    <li><a href="mailto:clarisse.boche@efrei.net">Clarisse Boche</a></li>
+                    <li><a href="mailto:anne.diveau@efrei.net">Anne Duveau</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <div class="footer-navigation">
+                    <h4>Navigation :</h4>
+                    <ul>
+                        <li><a href="{{ url_for('about') }}">About</a></li>
+                        <li><a href="{{ url_for('FirstReport') }}">First Report</a></li>
+                        <li><a href="{{ url_for('SecondReport') }}">Second Report</a></li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h4>Réseaux Sociaux :</h4>
+                <a href="https://www.instagram.com/Efrei_Paris" target="_blank">
+                    <img src="static/images/instagram.png" alt="Instagram" class="social-icon">
+                </a>
+                
+                <a href="https://www.efrei.fr" target="_blank">
+                    <img src="static/images/envoyer.png" alt="EFREI Paris" class="social-icon">
+                </a>
+            </div>
+
+            <div class="footer-column">
+                <h4>Adresse :</h4>
+                <p>31 avenue de la République, Villejuif (94800)</p>
+                <h4>Droits d'auteur :</h4>
+                <p>© 22023 - CCA.DataCamp</p>
+            </div>
+        </footer>
+    
+    </body>
+</html>
