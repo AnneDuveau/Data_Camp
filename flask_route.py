@@ -5,16 +5,38 @@ from werkzeug.utils import secure_filename
 from Analyse_image import traiter_image
 import shutil
 import cv2
+import psutil
+
 
 
 app = Flask(__name__)
-
 
 # Define the path where you want to save the downloaded images
 app.config['UPLOAD_FOLDER'] = 'static/uploads'
 
 # Créez le répertoire si nécessaire
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
+
+# Carbon footprint function (adapt as needed)
+def calculate_carbon_footprint(time_execution):
+    consommation_energy = estimate_consommation_energy(time_execution)
+    carbon_footprint = estimate_carbon_footprint(consommation_energy)
+
+    return carbon_footprint
+
+# Function for estimate energy consommation 
+def estimate_consommation_energy(time_execution):
+    puissance = 15  # In watts
+    consommation_energy = puissance * time_execution
+    print(f"Estimation of consommation energy: {consommation_energy} Wh")
+    return consommation_energy
+
+
+# Fonction to estimate carbon foot print 
+def estimate_carbon_footprint(consommation_energy):
+    carbon_footprint_per_wh = 0.074  # In CO2 per Wh
+    carbon_footprint = carbon_footprint_per_wh * (consommation_energy / 3600)  
+    return carbon_footprint
 
 
 # Home Page
@@ -62,9 +84,23 @@ def upload():
                     image_path = url_for('static', filename='uploads/' + uploaded_image.filename)
                     print(image_path)
 
+                    # Record the start time of the execution
+                    start_execution = psutil.cpu_times()
+
+
                     # Calling up the image processing function
                     resultat_treatment=traiter_image(filename)
-                    
+
+                   # Record the end time of the execution
+                    end_execution = psutil.cpu_times()
+
+                    # Calculate the execution time in seconds
+                    times_execution = (end_execution.user - start_execution.user) + (end_execution.system - start_execution.system)
+                    print(f"Time execution: {times_execution} seconds")
+                   
+                   # Call the carbon footprint calculation function
+                    empreinte_carbone = calculate_carbon_footprint(times_execution)
+                    print(f"Estimation of the carbon foot print : {empreinte_carbone} kg of CO2")
                     # Récupérez le nom du fichier copié depuis la session
                     
 
