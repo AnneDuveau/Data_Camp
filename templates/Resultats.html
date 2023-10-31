@@ -3,19 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <title>Résultat du traitement</title>
+    <link rel="stylesheet" type="text/css" href="static/css/resultats.css">
 </head>
-<h2>Image téléchargée :</h2>
-<img src="{{ image_path }}" alt="Image téléchargée">
 
 <body>
-    <h1>Image traitée</h1>
-    <h2>Résultat du traitement</h2>
-    <p>{{ resultat_treatment }}</p>
+    <header>
+        <div class="banner">
+            <img src="static/images/yeuxbaniere2.jpg" alt="Bannière avec des yeux">
+        </div>
+    </header>
+    <div class="title">
+        <h1>EyeCare</h1>
+    </div>
+    
+    <!-- Barre de navigation en haut -->
+    <div class="navbar">
+        <a href="{{ url_for('about') }}">About</a>
+        <a href="{{ url_for('FirstReport') }}">First Report</a>
+        <a href="{{ url_for('SecondReport') }}">Second Report</a>
+    </div>
 
-    <h2>Image traitée :</h2>
-    <img src="{{ url_for('static', filename='uploads/' + uploaded_image) }}" alt="Image">
+    <div class="main-content">
+        <div class="images-container">
+            <div class="image-column">
+                <h2 class="blue-title">Image téléchargée :</h2>
+                <img src="{{ url_for('static', filename='uploads/' + uploaded_image) }}" alt="Image" width="700">
+            </div>
+            <div class="image-column">
+                <h2 class="blue-title">Image traitée :</h2>
+                <img src="{{ url_for('static', filename='uploads/' + analyzed_image) }}" alt="Image" width="700">
+
+            </div>
+        </div>
+        <h2>Résultat du traitement</h2>
+        <p>{{ resultat_treatment }}</p>
+        <form action="/delete_uploads" method="POST">
+            <input type="submit" name="delete" value="Revenir à la page principale">
+        </form>
+    </div>
+
+
+
+    <footer class="footer-banner">
+        <div class="footer-column">
+            <h4>Contact us :</h4>
+            <ul>
+                <li><a href="mailto:camille.benezech@efrei.net">Camille Benezech</a></li>
+                <li><a href="mailto:clarisse.boche@efrei.net">Clarisse Boche</a></li>
+                <li><a href="mailto:anne.diveau@efrei.net">Anne Duveau</a></li>
+            </ul>
+        </div>
+    
+        <div class="footer-column">
+            <div class="footer-navigation">
+                <h4>Navigation :</h4>
+                <ul>
+                    <li><a href="{{ url_for('about') }}">About</a></li>
+                    <li><a href="{{ url_for('FirstReport') }}">First Report</a></li>
+                    <li><a href="{{ url_for('SecondReport') }}">Second Report</a></li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="footer-column">
+            <h4>Social media:</h4>
+            <a href="https://www.instagram.com/Efrei_Paris" target="_blank">
+                <img src="static/images/instagram.png" alt="Instagram" class="social-icon">
+            </a>
+            
+            <a href="https://www.efrei.fr" target="_blank">
+                <img src="static/images/envoyer.png" alt="EFREI Paris" class="social-icon">
+            </a>
+        </div>
+    
+        <div class="footer-column">
+            <h4>Address:</h4>
+            <p>31 avenue de la République, Villejuif</p>
+            <h4>Copyright:</h4>
+            <p>© 2023 - CCA.DataCamp</p>
+        </div>
+    </footer>
 </body>
 </html>
-<form action="/delete_uploads" method="POST">
-    <input type="submit" name="delete" value="Revenir à la page principale">
-</form>

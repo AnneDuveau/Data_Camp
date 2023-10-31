@@ -44,14 +44,13 @@ def entrainement_modele(chemin_train_excel, chemin_eval_excel, chemin_test_excel
     y_test = labels_test['Disease_Risk']
 
 
-   # Oversampling pour équilibrer les classes avec SMOTE
+    # Oversampling pour équilibrer les classes avec SMOTE
     # Oversampling pour équilibrer les classes
     oversampler = SMOTE(sampling_strategy='minority', random_state=42)
     X_train_resampled, y_train_resampled = oversampler.fit_resample(X_train.reshape(X_train.shape[0], -1), y_train)
     print(4)
     X_train_resampled = X_train_resampled.reshape(X_train_resampled.shape[0], 224, 224, 3)
     print(5)
-    
     
     print(4)
     print(5)
@@ -70,7 +69,6 @@ def entrainement_modele(chemin_train_excel, chemin_eval_excel, chemin_test_excel
     ])
     optimizer = tf.keras.optimizers.Adam(learning_rate=0.0001)  # Réduction du taux d'apprentissage
     model.compile(optimizer=optimizer, loss='binary_crossentropy', metrics=['accuracy'])
-
 
     model.fit(X_train_resampled, y_train_resampled, validation_data=(X_eval, y_eval), epochs=7, batch_size=64)
 

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Page de Data Camp</title>
+    <title>EyeCare</title>
     <link rel="icon" href="static/images/Iris_logo.png" type="image/png">
     <link rel="stylesheet" href="static/css/page.css"> 
     
@@ -15,7 +15,7 @@
         </div>
     </header>
     <div class="title">
-        <h1>Eye Cancer image classifier</h1>
+        <h1>EyeCare</h1>
     </div>
     
     <!-- Barre de navigation en haut -->
@@ -27,43 +27,33 @@
 
     <div class="main-content">
         <div class="presentation">
+            <br><strong> Why Eye Cancer? </strong>
             <p>Cancer is a formidable disease that can affect any part of the body, including the eyes.
 
-                While eye cancer is less common than other types of cancer, it can have serious consequences if not detected at an early stage. 
+                <br>While eye cancer is less common than other types of cancer, it can have serious consequences if not detected at an early stage. 
                 
-                That's why screening for eye cancer is of paramount importance. Understanding this disease, its symptoms, and the best screening methods is essential for preserving our vision and ocular health.
-                <br><br>Why is early screening essential?
+                That's why screening for eye cancer is of paramount importance. 
+                <br>Understanding this disease, its symptoms, and the best screening methods is essential for preserving our vision and ocular health.
+                <br><br><strong> Why is early screening essential? </strong>
                 
-                <br>Early Detection: Eye cancer, like all cancers, is easier to treat when detected at an early stage. Early diagnosis can help save the patient's vision and life.
+                <p>Early Detection: Eye cancer, likEe all cancers, is easier to treat when detected at an early stage. Therefore, early diagnosis can help save the patient's vision and life.
                 
-                <br>Prevention of Vision Loss: The symptoms of eye cancer can be subtle, making early detection even more crucial to prevent vision loss. Ignoring the symptoms can lead to severe impairment of vision.
+                <br>Prevention of Vision Loss: The symptoms of eye cancer can be subtle, making early detection even more crucial in order to prevent vision loss. Ignoring the symptoms can lead to severe impairment of vision.
                 
                 <br>Appropriate Treatment: Early diagnosis allows for the prompt initiation of suitable treatment, whether it's surgery, radiotherapy, chemotherapy, or other targeted therapies, depending on the type and stage of cancer.
             </p>
+            <strong> Why EyeCare? </strong>
+                <p>Because we care about your eyes. EyeCare is an application developed and provided by our team. It's an effective solution for screening eye cancer.
         </div>
     
 
-        <!--ANCIENNE VERSION -->
-    <!--    <div id="image-upload">
-            <h2>Analyseur d'imagerie médicale de l'oeil (.png uniquement)</h2>
+        <div id="image-upload" style="border: 2px solid #60aad4; padding: 10px; text-align: center;">
+            <h2>Eye Cancer image classifier (.png only)</h2>
             <form action="/uploads" method="POST" enctype="multipart/form-data">
-                <input type="file" name="image" accept=".png" required>
-                <input type="submit" value="Téléverser">
-            </form>
-
-            {% if uploaded_image %}
-            <h2>Downloaded image :</h2>
-            <img src="{{ url_for('static', filename='uploads/' + uploaded_image) }}" alt="Image">
-            {% endif %}
-        </div>
-    -->
-
-        <!--Version de Clarisse-->
-        <div id="image-upload">
-            <h2>Analyseur d'imagerie médicale de l'oeil (.png uniquement)</h2>
-            <form action="/uploads" method="POST" enctype="multipart/form-data">
-                <input type="file" name="image" accept=".png" required>
-                <input type="submit" value="Téléverser">
+                <label for="file-upload" class="custom-file-upload">
+                    <input type="file" name="image" accept=".png" value="choose a file">
+                    <input type="submit" value="submit">
+                </label>
             </form>
     
             {% if uploaded_image %}
@@ -77,7 +67,7 @@
     <!--FOOTER-->
     <footer class="footer-banner">
         <div class="footer-column">
-            <h4>Contactez-nous :</h4>
+            <h4>Contact us :</h4>
             <ul>
                 <li><a href="mailto:camille.benezech@efrei.net">Camille Benezech</a></li>
                 <li><a href="mailto:clarisse.boche@efrei.net">Clarisse Boche</a></li>
@@ -97,7 +87,7 @@
         </div>
     
         <div class="footer-column">
-            <h4>Réseaux Sociaux :</h4>
+            <h4>Social media:</h4>
             <a href="https://www.instagram.com/Efrei_Paris" target="_blank">
                 <img src="static/images/instagram.png" alt="Instagram" class="social-icon">
             </a>
@@ -108,9 +98,9 @@
         </div>
     
         <div class="footer-column">
-            <h4>Adresse :</h4>
+            <h4>Address:</h4>
             <p>31 avenue de la République, Villejuif</p>
-            <h4>Droits d'auteur :</h4>
+            <h4>Copyright:</h4>
             <p>© 2023 - CCA.DataCamp</p>
         </div>
     </footer>

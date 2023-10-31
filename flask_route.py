@@ -1,14 +1,13 @@
-from flask import Flask, render_template, request, jsonify, redirect, url_for,  flash
+from flask import Flask, render_template, request, jsonify, redirect, url_for, flash, session
 from flask_sqlalchemy import SQLAlchemy
 import os
 from werkzeug.utils import secure_filename
 from Analyse_image import traiter_image
 import shutil
-
+import cv2
 
 
 app = Flask(__name__)
-
 
 
 # Define the path where you want to save the downloaded images
@@ -50,6 +49,13 @@ def upload():
                     filename = secure_filename(uploaded_image.filename) # Renommer le fichier en utilisant secure_filename
                     filename = os.path.join(app.config['UPLOAD_FOLDER'], filename)
                     uploaded_image.save(filename)
+                    print(filename)
+
+                    # Generate the copied filename
+                    rep, nom_fichier = os.path.split(filename)
+                    nom_fichier_copie = os.path.splitext(nom_fichier)[0] + "_copie" + os.path.splitext(nom_fichier)[1]
+                    chemin_image_copie = os.path.join(app.config['UPLOAD_FOLDER'], nom_fichier_copie)
+                    print("chemin_image_copie:" + chemin_image_copie)
 
                     # Affichez l'image téléchargée
                     # Construisez le chemin de l'image téléchargée
@@ -58,8 +64,11 @@ def upload():
 
                     # Calling up the image processing function
                     resultat_treatment=traiter_image(filename)
+                    
+                    # Récupérez le nom du fichier copié depuis la session
+                    
 
-                    return render_template('Resultats.html', uploaded_image=uploaded_image.filename,   resultat_treatment=resultat_treatment)
+                    return render_template('Resultats.html', uploaded_image=nom_fichier_copie, analyzed_image=uploaded_image.filename,   resultat_treatment=resultat_treatment)
                     
                 except Exception as e:
                     return f'Erreur lors de l\'enregistrement de l\'image : {str(e)}'
